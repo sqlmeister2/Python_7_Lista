@@ -1,7 +1,7 @@
 zmienna = 1
 zmienna2 = "A"
 
-#lista jest to odpowiednik tablicy z javy
+# #lista jest to odpowiednik tablicy z javy
 lista = [] #stworzenie pustej listy
 print(lista)
 lista = [1, 2, "c", "d", "haha"]
@@ -12,7 +12,7 @@ print(lista)
 # oraz sformatowanie tekstu, aby wyswietlic we wskazanym miejscu wskazany obiekt
 print("Długośc listy: {}".format(len(lista)))
 
-# #odwołanie się do konkretnego elementu w liście
+# #odwołanie się do konkretnego elementu w liście (liczymy od 0 czyli wpisując 2 będzie to fizycznie 3 element z listy)
 print(lista[2])
 
 #nadpisanie elementu listy nową wartością
@@ -39,6 +39,20 @@ print(lista)
 #odwołanie się do "zagnieżdzonej listy"
 print(lista[6][0])
 
+#Łączenie list
+lista = [1, 2, "c", "d", "haha"]
+lista3 = [50, 60]
+lista4 = lista + lista3
+print(lista4)
+lista4 = lista + lista3*2
+print(lista4)
+
+# Rozszerzanie listy za pomocą metody extend
+my_list = [i for i in range(10)]
+my_list2 = ["FR", "GR"]
+my_list.extend(my_list2)
+print(my_list)
+
 #dołącza element we wskazanym przez nas miejscu
 lista.insert(3, "x") # pierwszy argument to miejsce gdzie chcemy umiejscowic
 print(lista)
@@ -50,13 +64,13 @@ print("Ilość wystąpeiń znaku w danej liscie ", lista.count(1))
 print("Index ", lista.index("d"))
 
 
-#funkcje działające tylko na liczbach
+# #funkcje działające tylko na liczbach
 lista2 = [1, 20, 35, -5, 0]
 
 print("Minimum: ", min(lista2))
 print("Maksimum: ", max(lista2))
 
-# max, min też można stosować na listach tekstowych, ale musza byc jednorodne typem, a nie mieszane.
+# # max, min też można stosować na listach tekstowych, ale musza byc jednorodne typem, a nie mieszane.
 print(max(["a", "b"]))
 
 #sortowanie listy
@@ -67,26 +81,35 @@ print(f"Ta sama lista po raz kolejny {lista2}")
 lista2.sort() #sortowanie trwałe
 print(f"Lista po sortowaniu trwałym: {lista2}")
 
-#odwrócenie kolejności listy
+# #odwrócenie kolejności listy
 lista2.reverse()
 print(lista2)
 
 
-
+lista = [1, 2, "c", "d", "haha"]
 print(lista)
 #wyswietlanie elementow listy za pomoca petli
 for i in lista:
     print(i)
 
-#wycinanie listy
-print(lista[0:3])
-print(lista[2:])
+# #wycinanie listy
+print(lista[0:3]) #bez trzeciego 
+print(lista[2:]) #z drugim
 #bez wybranej ilosci ostatniego elementu
 print("Bez wybranej ilości ostatniego elementu")
 print(lista[:-1])
 
+#przypisywanie wyników operacji na liscie do tej samej listy
+lista = [1, 2, "c", "d", "haha"]
+print(lista)
+lista[:-2]
+print('Cały czas taka sama lista')
+print(lista)
+lista = lista[:-2]
+print('Lista już po zmianach:')
+print(lista)
 
-# zwraca wartosc logiczna czy podana wartosc jest w liscie
+# # zwraca wartosc logiczna czy podana wartosc jest w liscie
 print(10 in lista)
 
 #list comprehension
@@ -99,9 +122,9 @@ my_list[1 : 3] = [ "A", "B"]
 print(my_list)
 
 
-# # Nie zadziała podmiana 3 wybranych elementów jedna wartoscia
-# # my_list[1:4] = 'C'
-# # print(my_list)
+# Nie zadziała podmiana 3 wybranych elementów jedna wartoscia
+my_list[1:4] = 'C'
+print(my_list)
 
 #Nalezy to zrobić za pomocą listy. 
 # Zadziałało to tak, że 3 elemnty zostały zamienione jednym  
@@ -110,35 +133,23 @@ my_list[1:4] = ['C']
 print(my_list)
 
 
-#Łączenie list
-lista3 = [50, 60]
-lista4 = lista + lista3
-print(lista4)
-lista4 = lista + lista3*2
-print(lista4)
-# Rozszerzanie listy za pomocą metody extend
-# my_list2 = ["FR", "GR"]
-# my_list.extend(my_list2)
-# print(my_list)
+#Kopiowanie i usuwanie listy
+print("-----")
+newList = ["AU", "BE", "DE"]
+listCopy = newList
+print(newList)
+newList.clear() #czyszczenie listy. Niestey listCopy i newList to te same obiekty, tak więc obie zostały wyczyszczone
+print(listCopy)
+print(newList)
+print(id(newList), id(listCopy))
 
-
-
-
-# #Kopiowanie i usuwanie listy
-# print("-----")
-# listCopy = newList
-# print(newList)
-# newList.clear() #czyszczenie listy. Niestey listCopy i newList to te same obiekty, tak więc obie zostały wyczyszczone
-# print(listCopy)
-# print(newList)
-
-# #trzeba użyć metody copy, aby skopiowała się w nowe miejsce w pamięci
-# newList = ["AU", "BE", "DE"]
-# print(newList)
-# listCopy = newList.copy()
-# print(id(listCopy)) #sprawdzenie czy te dwie listy to te same obiekty
-# print(id(newList))
-# newList.clear()
-# print(listCopy)
+#trzeba użyć metody copy, aby skopiowała się w nowe miejsce w pamięci
+newList = ["AU", "BE", "DE"]
+print(newList)
+listCopy = newList.copy()
+print(id(listCopy)) #sprawdzenie czy te dwie listy to te same obiekty
+print(id(newList))
+newList.clear()
+print(listCopy)
 
 

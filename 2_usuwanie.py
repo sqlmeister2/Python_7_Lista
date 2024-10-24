@@ -17,6 +17,7 @@ print(lista2)
 # lista2.remove("c")
 
 # Usuniecie z listy zadanego zakresu elementow. 
+print(lista2)
 lista2[1:3] = []
 print(lista2)
 
@@ -30,6 +31,7 @@ print(lista3)
 # print(lista3 - lista3[1:4])
 
 # #usuniecie ostatniego elementu z listy i z wybranego miejsca (indeksu)
+lista3 = [element for element in range(9)]
 print("\n",lista3)
 print("Usuniecie ostatniego elementu z listy")
 lista3.pop()
